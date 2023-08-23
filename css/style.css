@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    max-height: 100vh;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: crimson;
+}
+header{
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+nav ul{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li a{
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+nav ul li a:hover{
+    background: crimson;
+    color: #fff;
+}
+h2{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 10px;
+}
+form input{
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+form input:focus{
+    border-color: crimson;
+}
+form input[type="submit"]{
+    background: crimson;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+form input[type="submit"]:hover{
+    background: #333;
+}
+.message{
+    text-align: center;
+}
+.message .success{
+    color: green;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.message .error{
+    color: red;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+}
+img {
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
+}
+.card{
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+}
+.card__img img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.card__content{
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card__content h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    padding: 10px 0;
+    text-transform: capitalize;
+}
+.card__content p{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    padding: 3px;
+    text-transform: capitalize;
+    text-align: center;
+}
+ .lien{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.lien a{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: crimson;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.lien a:hover{
+    background: #333;
+}
+.animal{
+    width: 1000px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px auto;
+}
+.animal h2 {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+}
+.animal img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover/center;
+    margin: 0 auto;
+    display: block;
+}
+.animal p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    padding: 3px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.animal a{
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: crimson;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.animal a:hover{
+    background: #333;
+}
+footer{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}

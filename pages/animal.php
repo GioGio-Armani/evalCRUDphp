@@ -7,11 +7,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $query->execute();
     $animal = $query->fetch();
 }
-var_dump($animal['photo'])
 
-    ?>
+?>
 
-<section>
+<section class="animal">
     <h2>
         <?php echo $animal['nom']; ?>
     </h2>
@@ -33,10 +32,12 @@ var_dump($animal['photo'])
     <p>
         <?php echo $animal['histoire']; ?>
     </p>
-    <?php if (!empty($_SESSION['user'])) { ?>
-    <a href="/pages/update_animal.php?id=<?php echo $animal['id']; ?>">Modifier</a>
-    <a href="/utils/delete_animal.php?id=<?php echo $animal['id']; ?>">Supprimer</a>
-    <?php } ?>
+    <div class="lien">
+        <?php if (!empty($_SESSION['user'])) { ?>
+        <a href="/pages/update_animal.php?id=<?php echo $animal['id']; ?>">Modifier</a>
+        <a href="/utils/delete_animal.php?id=<?php echo $animal['id']; ?>">Supprimer</a>
+        <?php } ?>
+    </div>
 </section>
 
 <?php require_once '../utils/footer.php'; ?>
