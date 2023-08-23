@@ -102,11 +102,8 @@ form input[type="submit"]:hover{
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px 0;
-}
-img {
-    width: 20%;
-    height: 20%;
-    object-fit: cover;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 .card{
     width: 300px;

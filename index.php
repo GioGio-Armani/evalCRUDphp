@@ -8,7 +8,7 @@ if (!empty($_POST['search'])) {
     $animauxSearch = $query->fetchAll();
 }
 ?>
-<section>
+<section class="cards-section">
     <h2>Répertoire de vos animaux</h2>
 
     <form action="#" method="post">
