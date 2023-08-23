@@ -7,8 +7,9 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $query->execute();
     $animal = $query->fetch();
 }
+var_dump($animal['photo'])
 
-?>
+    ?>
 
 <section>
     <h2>

@@ -32,7 +32,12 @@ if (isset($_POST['nom']) && !empty($_POST['nom'])) {
     $query->bindValue(':nom', $nom, PDO::PARAM_STR);
 
     if (!empty($poids)) {
-        $query->bindValue(':poids', $poids, PDO::PARAM_INT);
+        if (is_numeric($poids)) {
+            $query->bindValue(':poids', $poids, PDO::PARAM_INT);
+        } else {
+            echo 'Le poids doit être un nombre';
+            exit();
+        }
     } else {
         $query->bindValue(':poids', null, PDO::PARAM_NULL);
     }
@@ -72,7 +77,7 @@ if (isset($_POST['nom']) && !empty($_POST['nom'])) {
         <input type="text" name="nom" id="nom" placeholder="Nom de l'animal">
         <label for="dateDeNaissance">Date de naissance</label>
         <input type="date" name="dateDeNaissance" id="dateDeNaissance">
-        <input type="number" name="poids" id="poids" placeholder="Poids (en kg)">
+        <input type="text" name="poids" id="poids" placeholder="Poids (en kg)">
         <input type="text" name="espece" id="espece" placeholder="Son espèce">
         <textarea name="histoire" id="histoire" cols="30" rows="10" placeholder="Histoire de l'animal"></textarea>
         <label for="photo">Photo</label>

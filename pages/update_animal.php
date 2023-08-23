@@ -19,10 +19,9 @@ if (!empty($_GET['id'])) {
             if (!is_dir($destinationPath)) {
                 mkdir($destinationPath);
             }
-
             if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+                $ancienCheminImage = __DIR__ . '/..' . $animal['photo'];
                 if (!empty($animal['photo'])) {
-                    $ancienCheminImage = __DIR__ . '/../' . $animal['photo'];
                     if (file_exists($ancienCheminImage)) {
                         unlink($ancienCheminImage);
                     }
@@ -45,7 +44,12 @@ if (!empty($_GET['id'])) {
             $query->bindValue(':id', $_GET['id'], PDO::PARAM_STR);
 
             if (!empty($poids)) {
-                $query->bindValue(':poids', $poids, PDO::PARAM_INT);
+                if (is_numeric($poids)) {
+                    $query->bindValue(':poids', $poids, PDO::PARAM_STR);
+                } else {
+                    echo 'Le poids doit être un nombre';
+                    exit();
+                }
             } else {
                 $query->bindValue(':poids', null, PDO::PARAM_NULL);
             }
@@ -65,7 +69,7 @@ if (!empty($_GET['id'])) {
             if (!empty($photo)) {
                 $query->bindValue(':photo', $photo, PDO::PARAM_STR);
             } else {
-                $query->bindValue(':photo', null, PDO::PARAM_NULL);
+                $query->bindValue(':photo', $animal['photo'], PDO::PARAM_STR);
             }
             if (!empty($dateDeNaissance)) {
                 $query->bindValue(':date_de_naissance', $dateDeNaissance);
@@ -73,8 +77,8 @@ if (!empty($_GET['id'])) {
                 $query->bindValue(':date_de_naissance', null, PDO::PARAM_NULL);
             }
             $query->execute();
-            header('Location: /index.php?update=ok');
-            exit();
+            // header('Location: /index.php?update=ok');
+            // exit();
         }
     } else {
         header('Location: /index.php?update=error');
@@ -90,8 +94,7 @@ if (!empty($_GET['id'])) {
         <label for="dateDeNaissance">Date de naissance</label>
         <input type="date" name="dateDeNaissance" id="dateDeNaissance"
             value="<?php echo $animal['date_de_naissance'] ?>">
-        <input type="number" name="poids" id="poids" placeholder="Poids (en kg)"
-            value="<?php echo $animal['poids']; ?>">
+        <input type="text" name="poids" id="poids" placeholder="Poids (en kg)" value="<?php echo $animal['poids']; ?>">
         <input type="text" name="espece" id="espece" placeholder="Espèce" value="<?php echo $animal['espece']; ?>">
         <textarea name="histoire" id="histoire" cols="30" rows="10"
             placeholder="Histoire de animal"><?php echo $animal['histoire']; ?></textarea>
