@@ -77,10 +77,10 @@ if (!empty($_POST['search'])) {
                                 ?>
                 <a href="/pages/update_animal.php?id=<?= $animal['id'] ?>">&#10000;</a>
                 <a href="/utils/delete_animal.php?id=<?= $animal['id'] ?>">&#10006;</a>
-            </div>
-            <?php
+                <?php
                             }
                             ?>
+            </div>
 
 
         </div>
@@ -127,10 +127,10 @@ if (!empty($_POST['search'])) {
                             ?>
                 <a href="/pages/update_animal.php?id=<?= $animal['id'] ?>">&#10000;</a>
                 <a href="/utils/delete_animal.php?id=<?= $animal['id'] ?>">&#10006;</a>
-            </div>
-            <?php
+                <?php
                         }
                         ?>
+            </div>
 
 
         </div>
