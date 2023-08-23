@@ -6,7 +6,6 @@ if (!empty($_POST['search'])) {
     $query->bindValue(':search', '%' . $search . '%', PDO::PARAM_STR);
     $query->execute();
     $animauxSearch = $query->fetchAll();
-
 }
 ?>
 <section>
@@ -81,16 +80,12 @@ if (!empty($_POST['search'])) {
                             }
                             ?>
             </div>
-
-
         </div>
         <?php
                 }
             } else {
                 echo '<p>Aucun animal trouvé</p>';
-
             }
-
         } else {
             $query = $bdd->prepare('SELECT * FROM animal');
             $query->execute();
@@ -131,8 +126,6 @@ if (!empty($_POST['search'])) {
                         }
                         ?>
             </div>
-
-
         </div>
         <?php
             }

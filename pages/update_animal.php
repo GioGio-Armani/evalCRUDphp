@@ -77,8 +77,8 @@ if (!empty($_GET['id'])) {
                 $query->bindValue(':date_de_naissance', null, PDO::PARAM_NULL);
             }
             $query->execute();
-            // header('Location: /index.php?update=ok');
-            // exit();
+            header('Location: /index.php?update=ok');
+            exit();
         }
     } else {
         header('Location: /index.php?update=error');
